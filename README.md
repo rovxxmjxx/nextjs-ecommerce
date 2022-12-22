@@ -85,3 +85,9 @@ yarn prisma generate 스키마 연결
 > meta data
 > sementic html
 > next-sitemap
+
+### admin editor
+
+`draft.js`
+`yarn add draft-js react-draft-wysiwyg`
+`yarn add -D @types/draft-js @types/react-draft-wysiwyg`

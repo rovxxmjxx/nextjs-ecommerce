@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
@@ -21,9 +21,11 @@
       "@/layouts/*": ["layouts/*"],
       "@/lib/*": ["lib/*"],
       "@/css/*": ["css/*"],
-      "@/constants/*": ["constants/*"]
-    }
+      "@/constants/*": ["constants/*"],
+      "@/icons/*": ["icons/*"]
+    },
+    "types": ["@emotion/react/types/css-prop"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/products/[product]"],
   "exclude": ["node_modules"]
 }

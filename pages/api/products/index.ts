@@ -16,8 +16,13 @@ type Data = {
   message: string;
   data?: any;
 };
-export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  const data = await getProducts();
 
-  return res.status(200).json({ message: 'ok', data });
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  try {
+    const data = await getProducts();
+
+    return res.status(200).json({ message: 'ok', data });
+  } catch (error) {
+    return res.status(500).json({ message: 'failed' });
+  }
 }
