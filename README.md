@@ -22,3 +22,19 @@ yarn husky install
 yarn husky add .husky/pre-commit "yarn lint-staged --no-stash"
 .huskt에 pre-commit 설정을 추가한다.
 ```
+
+## 3. Notion Api 활용하기
+
+> Getting started
+
+- notion 계정
+- workspace 생성
+- integrations 만들기
+- secrets key 복사
+- url에 삽입된 databaseId 복사
+
+```
+yarn add @notionhq/client
+```
+
+## 4. prima, planetscale(DB) 활용하기
