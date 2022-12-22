@@ -76,5 +76,12 @@ yarn prisma init
 ```
 .env 설정
 /prisma/schema.prisma 설정
-yarn prisma generate로 스키마 연결
+yarn prisma generate 스키마 연결
 ```
+
+### bot
+
+> robots.tsx
+> meta data
+> sementic html
+> next-sitemap
