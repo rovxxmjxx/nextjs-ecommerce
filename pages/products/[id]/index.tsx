@@ -5,7 +5,6 @@ import { EditorState, convertFromRaw } from 'draft-js';
 
 import Editor from '@/components/Editor';
 import ProductLayout from '@/layouts/ProductLayout';
-import ImageCarousel from '@/components/ImageCarousel';
 
 export const images = [
   {
@@ -44,10 +43,19 @@ export default function ProductDetail() {
       setEditorState(state);
     })();
   }, [id]);
+
   return (
-    <ProductLayout frontMatter={{}}>
+    <ProductLayout
+      frontMatter={{
+        images,
+        brandDetail: {
+          name: 'nike',
+          imageUrl: 'https://picsum.photos/id/1018/1000/1000/',
+          siteUrl: 'https://nike.com',
+        },
+      }}
+    >
       <div>ProductDetail</div>
-      <ImageCarousel images={images} />
       <Editor
         editorState={editorState}
         onEditorStateChange={setEditorState}

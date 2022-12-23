@@ -72,11 +72,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     : await HANDLER[req.method](+id);
 
   return res.status(status).json({ message, data });
-
-  // try {
-  //   const data = await getProduct(Number(id));
-  //   return res.status(200).json({ message: 'ok', data });
-  // } catch (error) {
-  //   return res.status(500).json({ message: 'failed' });
-  // }
 }

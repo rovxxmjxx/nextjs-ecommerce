@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Editor from '@/components/Editor';
 import { useRouter } from 'next/router';
 import { EditorState, convertFromRaw, convertToRaw } from 'draft-js';
-import ImageCarousel from '@/components/ImageCarousel';
 import { images } from './index';
+import ProductLayout from '@/layouts/ProductLayout';
 
 export default function ProductDetailEdit() {
   const router = useRouter();
@@ -39,10 +39,20 @@ export default function ProductDetailEdit() {
   }, [id]);
 
   return (
-    <div>
-      <h1>ProductDetailEdit</h1>
-      <ImageCarousel images={images} />
-
+    <ProductLayout
+      frontMatter={{
+        images,
+        brandDetail: { name: 'nike', imageUrl: 'https://picsum.photos/id/1018/1000/600/', siteUrl: 'https://nike.com' },
+      }}
+    >
+      <div>ProductDetailEdit</div>
+      {/* <ImageCarousel images={images} /> */}
+      <Editor
+        editorState={editorState}
+        onEditorStateChange={setEditorState}
+        readOnly={isReadOnly}
+        onReadOnlyChange={setIsReadOnly}
+      />
       {editorState !== null && (
         <Editor
           editorState={editorState}
@@ -61,6 +71,6 @@ export default function ProductDetailEdit() {
       >
         완료
       </button>
-    </div>
+    </ProductLayout>
   );
 }
